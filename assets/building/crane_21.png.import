@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bnki2teckh4i4"
+path.s3tc="res://.godot/imported/crane_21.png-e8a13a931b9af2b7455a68b9f3644e1e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "60dde5a46ae89031ef0efe181d47ade5"
+}
+
+[deps]
+
+source_file="res://assets/building/crane_21.png"
+dest_files=["res://.godot/imported/crane_21.png-e8a13a931b9af2b7455a68b9f3644e1e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

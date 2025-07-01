@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dq04n73q3nbkt"
+path.s3tc="res://.godot/imported/metallic_pallet_factory_store_3.png-3f9c2b405c28e0fc6be0a8fc411f3484.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "70640c7d52b806e08b07e93fc04b72e8"
+}
+
+[deps]
+
+source_file="res://assets/2/metallic_pallet_factory_store_3.png"
+dest_files=["res://.godot/imported/metallic_pallet_factory_store_3.png-3f9c2b405c28e0fc6be0a8fc411f3484.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

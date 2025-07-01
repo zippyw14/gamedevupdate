@@ -1,0 +1,192 @@
+[gd_scene load_steps=14 format=3 uid="uid://bwrnj0cn805p4"]
+
+[ext_resource type="Script" uid="uid://cgnrunbpxlsns" path="res://Jembatan.gd" id="1_vh3wp"]
+[ext_resource type="Texture2D" uid="uid://bbftojhcf25uf" path="res://assets/building2/building_brutalist_quadrhomb_10.png" id="2_gfmn3"]
+[ext_resource type="PackedScene" uid="uid://w5rjnpto38a" path="res://assets/column_factory/column_-foundation-_factory_-_14mb.glb" id="2_hs6g7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xl2ib"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3fn4v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd5rx"]
+albedo_texture = ExtResource("2_gfmn3")
+rim = 0.29
+rim_tint = 0.76
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b17wh"]
+albedo_texture = ExtResource("2_gfmn3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dms5h"]
+albedo_texture = ExtResource("2_gfmn3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3fn4v"]
+size = Vector3(3.28015, 1, 1)
+
+[sub_resource type="Animation" id="Animation_hs6g7"]
+resource_name = "GoyangKanan"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kanan:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(214.873, -1.7, 1.724), Vector3(214.873, -30.6167, 1.724)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Kanan:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0523599, 0, 0), Vector3(-0.0471239, 0, 0), Vector3(0.0523599, 0, 0), Vector3(-0.0471239, 0, 0), Vector3(0.0523599, 0, 0), Vector3(-0.0471239, 0, 0), Vector3(0.0523599, 0, 0), Vector3(-0.0471239, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vh3wp"]
+resource_name = "GoyangKiri"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kiri:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(136.368, -1.73346, 1.72438), Vector3(136.368, -3, 1.724), Vector3(136.368, -1.73346, 1.72438), Vector3(136.368, -3, 1.724), Vector3(136.368, -1.73346, 1.72438), Vector3(136.368, -3, 1.724), Vector3(136.368, -1.73346, 1.72438)]
+}
+
+[sub_resource type="Animation" id="Animation_gfmn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kiri:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(136.368, -1.73346, 1.72438)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kanan:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(214.873, -1.7, 1.724)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kanan:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nd5rx"]
+_data = {
+&"GoyangKanan": SubResource("Animation_hs6g7"),
+&"GoyangKiri": SubResource("Animation_vh3wp"),
+&"RESET": SubResource("Animation_gfmn3")
+}
+
+[node name="Jembatan" type="Node3D"]
+script = ExtResource("1_vh3wp")
+
+[node name="Kiri" type="StaticBody3D" parent="."]
+physics_interpolation_mode = 2
+transform = Transform3D(0.51325, 0, 0, 0, 0.998475, 0, 0, 0, 0.998475, 136.368, -1.73346, 1.72438)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kiri"]
+physics_interpolation_mode = 2
+transform = Transform3D(88.5718, 0, 0, 0, 4.23818, 0, 0, 0, 28.2354, 324.681, -28.8945, 6.08472)
+shape = SubResource("BoxShape3D_xl2ib")
+debug_color = Color(0.797219, 0.0513974, 1, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kiri"]
+transform = Transform3D(88.482, 0, 0, 0, 5.05295, 0, 0, 0, 21.4799, 325.045, -29.5042, 8.39596)
+mesh = SubResource("BoxMesh_3fn4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_nd5rx")
+
+[node name="Tengah" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0735808, 0, 0, 0, 0.998475, 0, 0, 0, 0.998475, 305.174, -1.73346, 1.72438)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tengah"]
+transform = Transform3D(88.5718, 0, 0, 0, 4.23818, 0, 0, 0, 28.2354, 324.681, -28.8945, 6.08472)
+shape = SubResource("BoxShape3D_xl2ib")
+debug_color = Color(0.797219, 0.0513974, 1, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tengah"]
+transform = Transform3D(88.482, 0, 0, 0, 5.05295, 0, 0, 0, 21.4799, 325.045, -29.5042, 8.39596)
+mesh = SubResource("BoxMesh_3fn4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_b17wh")
+
+[node name="Kanan" type="StaticBody3D" parent="."]
+transform = Transform3D(0.418183, 0, 0, 0, 0.998475, 0, 0, 0, 0.998475, 214.873, -1.7, 1.724)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kanan"]
+transform = Transform3D(88.5718, 0, 0, 0, 4.23818, 0, 0, 0, 28.2354, 324.681, -28.8945, 6.08472)
+shape = SubResource("BoxShape3D_xl2ib")
+debug_color = Color(0.797219, 0.0513974, 1, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kanan"]
+physics_interpolation_mode = 1
+transform = Transform3D(88.482, 0, 0, 0, 5.05295, 0, 0, 0, 21.4799, 325.045, -29.5042, 8.39596)
+mesh = SubResource("BoxMesh_3fn4v")
+surface_material_override/0 = SubResource("StandardMaterial3D_dms5h")
+
+[node name="AreaKiri" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54.745)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaKiri"]
+transform = Transform3D(13.5784, 0, 0, 0, 2.3094, 0, 0, 0, 18.6999, 303.339, -26.5111, 66.1477)
+shape = SubResource("BoxShape3D_3fn4v")
+debug_color = Color(0.916832, 7.26774e-05, 0.707862, 0.42)
+
+[node name="AreaKanan" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54.745)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaKanan"]
+transform = Transform3D(10.858, 0, 0, 0, 2.3094, 0, 0, 0, 18.6999, 351.058, -26.913, 70.1928)
+shape = SubResource("BoxShape3D_3fn4v")
+debug_color = Color(0.916832, 7.26774e-05, 0.707862, 0.42)
+
+[node name="TimerKiri" type="Timer" parent="."]
+wait_time = 2.4
+one_shot = true
+
+[node name="TimerKanan" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Sketchfab_Scene5" parent="." instance=ExtResource("2_hs6g7")]
+transform = Transform3D(-20, 0, -1.74846e-06, 0, 20, 0, 1.74846e-06, 0, -20, 329.447, -107.099, 1.89317)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nd5rx")
+}

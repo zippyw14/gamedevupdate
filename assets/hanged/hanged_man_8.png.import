@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c5es0bx2wms1l"
+path.s3tc="res://.godot/imported/hanged_man_8.png-4d6405555c799aa5841d88e9836e2626.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "004ec7de56c5500fa9d79d1bfd292f3b"
+}
+
+[deps]
+
+source_file="res://assets/hanged/hanged_man_8.png"
+dest_files=["res://.godot/imported/hanged_man_8.png-4d6405555c799aa5841d88e9836e2626.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/hanged/hanged_man_8.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

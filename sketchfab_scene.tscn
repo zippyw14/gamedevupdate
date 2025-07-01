@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu0f4p3ysbctu"]
+
+[ext_resource type="PackedScene" uid="uid://b52ptfnv3u7wc" path="res://assets/1/abandoned_building.glb" id="1_r57si"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r57si"]
+points = PackedVector3Array(-13.0931, -19.0106, -33.519, -13.0931, 19.0106, -33.519, 14.5358, -19.0106, -33.519, -13.0931, -19.0106, 33.519, 14.5358, 19.0106, -33.519, -13.0931, 19.0106, 33.519, 14.5358, -19.0106, 33.519, 14.5358, 19.0106, 33.519)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_r57si")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/255fbab5dde44acfb90af7ddff2423e5_fbx/RootNode/Cube/Cube_Material_002_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/255fbab5dde44acfb90af7ddff2423e5_fbx/RootNode/Cube/Cube_Material_002_0/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_r57si")

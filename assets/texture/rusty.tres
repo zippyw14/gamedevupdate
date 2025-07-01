@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cf402x613y7m6"]
+
+[ext_resource type="Texture2D" uid="uid://d1iw4jvjo7oc8" path="res://assets/texture/rusty_metal_04_diff_1k.jpg" id="1_5sbk1"]
+
+[resource]
+albedo_texture = ExtResource("1_5sbk1")
