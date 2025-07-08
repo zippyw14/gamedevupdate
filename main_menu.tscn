@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=4 uid="uid://c7d6btu1hxvgd"]
+[gd_scene load_steps=32 format=4 uid="uid://c7d6btu1hxvgd"]
 
 [ext_resource type="Texture2D" uid="uid://cy5h8x5lw1rus" path="res://assets/font/Gen4 169 cinematic background for a dark fantasy video game menu titled 'Born of the a-2, 3118400913 (1).png" id="1_jix8l"]
 [ext_resource type="Script" uid="uid://o68vufv1k1rc" path="res://Menu.gd" id="1_nlkkf"]
-[ext_resource type="VideoStream" path="res://assets/font/Gen-4-Turbo-buat-gambar-detail-dan-fontnya-bergerak-2410573022.ogv" id="2_glbon"]
-[ext_resource type="VideoStream" path="res://assets/font/VID_20250701_161705.ogv" id="6_nlkkf"]
-[ext_resource type="FontFile" uid="uid://ltea24hqfuk3" path="res://assets/font/CinzelDecorative-Bold.ttf" id="51_kojkm"]
+[ext_resource type="VideoStream" uid="uid://c0nmw6d3nkbha" path="res://assets/font/Gen-4-Turbo-buat-gambar-detail-dan-fontnya-bergerak-2410573022.ogv" id="2_glbon"]
+[ext_resource type="VideoStream" uid="uid://c4qw68pybwjl" path="res://assets/font/opening-fix.ogv" id="2_nlkkf"]
 [ext_resource type="FontFile" uid="uid://clgev5jl20o14" path="res://assets/font/CinzelDecorative-Regular.ttf" id="52_m3v73"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
@@ -37,7 +36,47 @@ loop = true
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g470i"]
 
-[node name="WorldManager" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.403922, 0.403922, 0.403922, 0.611765)
+border_width_left = 50
+border_width_top = 10
+border_width_right = 50
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.635294)
+shadow_size = 585
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe12f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qtwp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy7ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0o4t1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0k4wn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5v2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iotk1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w44g7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm266"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8g3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u0te"]
+
+[node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,7 +84,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="."]
+[node name="Main Menu" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,17 +93,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlkkf")
 
-[node name="Videointro" type="VideoStreamPlayer" parent="Control"]
+[node name="Videointro" type="VideoStreamPlayer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("6_nlkkf")
+stream = ExtResource("2_nlkkf")
 expand = true
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Main Menu"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -74,7 +113,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_glbon")
 
-[node name="Videobackround" type="VideoStreamPlayer" parent="Control"]
+[node name="Videobackround" type="VideoStreamPlayer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,12 +125,12 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Main Menu"]
 stream = SubResource("AudioStreamMP3_jix8l")
 autoplay = true
 playback_type = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,19 +144,12 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("51_kojkm")
-theme_override_font_sizes/font_size = 56
-text = "Born of the Void"
+size_flags_vertical = 8
 
-[node name="NewGameButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -137,11 +169,11 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nbjkp")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nlkkf")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vcx4h")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g470i")
-text = "New Game"
+text = "NEw gAme"
 
-[node name="LoadButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="LoadButton" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.347817, 0.347817, 0.347817, 1)
@@ -159,11 +191,11 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nbjkp")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nlkkf")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vcx4h")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g470i")
-text = "Load"
+text = "LoaD"
 
-[node name="QuiteButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="QuiteButton" type="Button" parent="Main Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.592448, 2.20198e-06, 4.33177e-07, 1)
@@ -181,11 +213,96 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_nbjkp")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nlkkf")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vcx4h")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_g470i")
-text = "EXIT"
+text = "eXIt"
 
-[connection signal="finished" from="Control/Videointro" to="Control" method="_on_videointro_finished"]
-[connection signal="finished" from="Control/Videointro" to="Control/MarginContainer/VBoxContainer" method="_on_videointro_finished"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/NewGameButton" to="Control" method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/NewGameButton" to="Control/MarginContainer/VBoxContainer" method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuiteButton" to="Control" method="_on_quite_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/QuiteButton" to="Control/MarginContainer/VBoxContainer" method="_on_quite_button_pressed"]
+[node name="load menu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.172
+anchor_top = 0.12037
+anchor_right = 0.844
+anchor_bottom = 0.899
+offset_left = -0.144012
+offset_right = 377.712
+offset_bottom = 143.448
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.672499, 0.778448)
+
+[node name="Panel2" type="Panel" parent="load menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.252
+anchor_top = -0.156
+anchor_right = 1.229
+anchor_bottom = 1.142
+offset_left = 0.304016
+offset_top = 0.0880051
+offset_right = 0.191895
+offset_bottom = -0.0160522
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_glbon")
+
+[node name="Panel" type="Panel" parent="load menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlkkf")
+
+[node name="Button" type="Button" parent="load menu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -51.5
+offset_top = -65.0
+offset_right = 51.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.458824, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("52_m3v73")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qe12f")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8qtwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dy7ct")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0o4t1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0k4wn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_j5v2v")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_iotk1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_w44g7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_cm266")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g8g3n")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8u0te")
+text = "BACk"
+
+[node name="Label" type="Label" parent="load menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.072
+anchor_top = 0.054
+anchor_right = 0.179
+anchor_bottom = 0.141
+offset_left = 0.327515
+offset_top = -0.307598
+offset_right = 0.0635071
+offset_bottom = 0.316399
+theme_override_fonts/font = ExtResource("52_m3v73")
+theme_override_font_sizes/font_size = 41
+text = "LOaD"
+
+[connection signal="finished" from="Main Menu/Videointro" to="Main Menu" method="_on_videointro_finished"]
+[connection signal="finished" from="Main Menu/Videointro" to="Main Menu/MarginContainer/VBoxContainer" method="_on_videointro_finished"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/NewGameButton" to="Main Menu" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/NewGameButton" to="Main Menu/MarginContainer/VBoxContainer" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/LoadButton" to="Main Menu" method="_on_load_button_pressed"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/QuiteButton" to="Main Menu" method="_on_quite_button_pressed"]
+[connection signal="pressed" from="Main Menu/MarginContainer/VBoxContainer/QuiteButton" to="Main Menu/MarginContainer/VBoxContainer" method="_on_quite_button_pressed"]
+[connection signal="pressed" from="load menu/Button" to="Main Menu" method="_on_button_pressed"]
